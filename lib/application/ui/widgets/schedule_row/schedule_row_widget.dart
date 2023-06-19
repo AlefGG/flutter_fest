@@ -19,25 +19,28 @@ class _ScheduleRowSingleSessionWidget extends ScheduleRowWidget {
 
   @override
   Widget build(BuildContext context) {
+    const progressStatus = ScheduleRowWidgetConfigurationProgressStatus.current;
     const configuration = ScheduleRowSessionWidgetConfiguration(
       avatarUrl:
           'https://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/man-light-skin-tone.png',
       speakerName: 'Алексей Чулпин',
       sesionTitle: 'Субъективность в оценке дизайна',
       isFavourite: true,
-      progressStatus: ScheduleRowWidgetConfigurationProgressStatus.oncoming,
+      progressStatus: progressStatus,
     );
-    return SizedBox(
-      height: 200,
-      child: CustomMultiChildLayout(
-        delegate: RowLayoutDelegate(),
+    const ddd = ScheduleRowTimeWidgetConfiguration(
+      startTime: "8:00",
+      endTime: "10:30",
+      progressStatus: progressStatus,
+    );
+    return const IntrinsicHeight(
+      child: Row(
         children: [
-          LayoutId(
-            id: 1,
-            child: const ScheduleRowTimeWidget(),
+          ScheduleRowTimeWidget(
+            configuration: ddd,
           ),
-          LayoutId(
-            id: 2,
+          SizedBox(width: 12),
+          Expanded(
             child: ScheduleRowSessionWidget(
               configuration: configuration,
             ),
@@ -45,41 +48,6 @@ class _ScheduleRowSingleSessionWidget extends ScheduleRowWidget {
         ],
       ),
     );
-  }
-}
-
-class RowLayoutDelegate extends MultiChildLayoutDelegate {
-  @override
-  void performLayout(Size size) {
-    const firstChildWidth = 48.0;
-    const spaceChildWidth = 12.0;
-    const secondChildWidthXOffset = firstChildWidth + spaceChildWidth;
-
-    var secondChildSize = Size.zero;
-    if (hasChild(2)) {
-      final maxWidth = size.width - secondChildWidthXOffset;
-      secondChildSize = layoutChild(
-        2,
-        BoxConstraints(maxWidth: maxWidth),
-      );
-    }
-    if (hasChild(1)) {
-      final maxHeight = max(secondChildSize.height, 90.0);
-      layoutChild(
-        1,
-        BoxConstraints(
-          maxWidth: firstChildWidth,
-          maxHeight: maxHeight,
-        ),
-      );
-    }
-    positionChild(1, Offset.zero);
-    positionChild(2, const Offset(secondChildWidthXOffset, 0));
-  }
-
-  @override
-  bool shouldRelayout(covariant MultiChildLayoutDelegate oldDelegate) {
-    return false;
   }
 }
 
