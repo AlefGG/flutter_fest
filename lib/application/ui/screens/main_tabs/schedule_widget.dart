@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_fest/application/ui/themes/app_colors.dart';
 import 'package:flutter_fest/application/ui/widgets/schedule_row/schedule_row_widget.dart';
 import 'package:flutter_fest/resources/resources.dart';
 
@@ -107,7 +108,7 @@ class _SectionButtonsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const totalItem = 4;
+    const totalItem = 5;
     const itemGradientWidth = 2.0;
     const halfItemGradientWidth = itemGradientWidth / 2;
     const endGradientPoint =
@@ -118,7 +119,7 @@ class _SectionButtonsWidget extends StatelessWidget {
       child: ListView.separated(
         padding: EdgeInsets.only(left: 20, right: 20, top: topInset),
         scrollDirection: Axis.horizontal,
-        itemCount: 4,
+        itemCount: 5,
         itemBuilder: (context, index) {
           final currentGradientStartPoint =
               (halfItemGradientWidth + index * itemGradientWidth);
@@ -131,7 +132,7 @@ class _SectionButtonsWidget extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () {},
                 style: ButtonStyle(
-                  foregroundColor: MaterialStateProperty.all(Colors.white),
+                  foregroundColor: MaterialStateProperty.all(AppColors.white),
                   padding: MaterialStateProperty.all(
                     EdgeInsets.zero,
                   ),
@@ -149,8 +150,8 @@ class _SectionButtonsWidget extends StatelessWidget {
                         begin: Alignment(-currentGradientStartPoint, 0.0),
                         end: Alignment(currentGradientEndPoint, 0.0),
                         colors: const <Color>[
-                          Color(0xFF00BD13),
-                          Color(0xFF170AF4)
+                          AppColors.green,
+                          AppColors.blue,
                         ],
                       ),
                       borderRadius:

@@ -1,5 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:flutter_fest/application/ui/themes/app_colors.dart';
+import 'package:flutter_fest/application/ui/themes/app_text_style.dart';
 import 'package:flutter_fest/application/ui/widgets/schedule_row/schedule_row_widget.dart';
 
 import 'package:flutter_fest/resources/app_fonts.dart';
@@ -73,12 +75,8 @@ class _SpeakerWidget extends StatelessWidget {
         Expanded(
           child: Text(
             configuration.speakerName,
-            style: TextStyle(
+            style: AppTextStyle.bookText.copyWith(
               color: configuration._style.speakerNameColor,
-              fontSize: 14,
-              fontFamily: AppFonts.basisGrotesquePro,
-              fontWeight: FontWeight.w500,
-              height: 1.4285714286,
             ),
             maxLines: 1,
             softWrap: false,
@@ -124,11 +122,8 @@ class _DescriptionWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       configuration.sesionTitle,
-      style: TextStyle(
+      style: AppTextStyle.steinbeckNormalText.copyWith(
         color: configuration._style.sessionTitleColor,
-        fontSize: 18,
-        fontFamily: AppFonts.steinbeck,
-        height: 1.222222,
       ),
     );
   }
@@ -188,20 +183,20 @@ class ScheduleRowSessionWidgetConfiguration {
 
   static const onComingStyle =
       _ScheduleRowSessionWidgetConfigurationProgressStyle(
-    widgetBackground: Color(0xFF101115),
-    speakerNameColor: Color(0xFF52525e),
-    sessionTitleColor: Colors.white,
+    widgetBackground: AppColors.darkSecondary,
+    speakerNameColor: AppColors.darkText,
+    sessionTitleColor: AppColors.white,
   );
   static const pastStyle = _ScheduleRowSessionWidgetConfigurationProgressStyle(
     widgetBackground: Colors.transparent,
-    speakerNameColor: Color(0x7A52525e),
-    sessionTitleColor: Color(0xFF52525e),
+    speakerNameColor: AppColors.darkText48,
+    sessionTitleColor: AppColors.darkText,
   );
 
   static const isFavouriteStyle =
       _ScheduleRowSessionWidgetConfigurationFavouriteStyle(
-    favouriteButtonColor: Color(0xFF00BD13),
-    widgetBackgroundGradient: Color(0xFF00BD13),
+    favouriteButtonColor: AppColors.green,
+    widgetBackgroundGradient: AppColors.green,
     favouriteButtonIcon: Images.iconsBookmarkFull,
   );
 

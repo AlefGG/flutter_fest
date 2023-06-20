@@ -1,8 +1,9 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:flutter_fest/application/ui/themes/app_colors.dart';
+import 'package:flutter_fest/application/ui/themes/app_text_style.dart';
 
 import 'package:flutter_fest/application/ui/widgets/schedule_row/schedule_row_widget.dart';
-import 'package:flutter_fest/resources/app_fonts.dart';
 
 class ScheduleRowTimeWidget extends StatelessWidget {
   final ScheduleRowTimeWidgetConfiguration configuration;
@@ -13,12 +14,6 @@ class ScheduleRowTimeWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const textStyle = TextStyle(
-      fontSize: 12,
-      fontFamily: AppFonts.basisGrotesquePro,
-      fontWeight: FontWeight.w500,
-      height: 1.3,
-    );
     return SizedBox(
       width: 48,
       child: Row(
@@ -29,7 +24,7 @@ class ScheduleRowTimeWidget extends StatelessWidget {
             children: [
               Text(
                 configuration.startTime,
-                style: textStyle.copyWith(
+                style: AppTextStyle.bookTextSmall.copyWith(
                   color: configuration._style.startColor,
                 ),
                 maxLines: 1,
@@ -37,7 +32,7 @@ class ScheduleRowTimeWidget extends StatelessWidget {
               const Spacer(),
               Text(
                 configuration.endTime,
-                style: textStyle.copyWith(
+                style: AppTextStyle.bookTextSmall.copyWith(
                   color: configuration._style.endColor,
                 ),
                 maxLines: 1,
@@ -101,7 +96,7 @@ class _DividerWidget extends StatelessWidget {
 class _ScheduleRowTimeWidgetConfigurationProgressStyle {
   final Color startColor;
   final Color endColor;
-  _ScheduleRowTimeWidgetConfigurationProgressStyle({
+  const _ScheduleRowTimeWidgetConfigurationProgressStyle({
     required this.startColor,
     required this.endColor,
   });
@@ -129,19 +124,19 @@ class ScheduleRowTimeWidgetConfiguration {
     required this.progressStatus,
   });
 
-  static final onComingStyle = _ScheduleRowTimeWidgetConfigurationProgressStyle(
-    startColor: const Color(0xB7FFFFFF), //Colors.white.withOpacity(0.72),
-    endColor: const Color(0xB7FFFFFF),
+  static const onComingStyle = _ScheduleRowTimeWidgetConfigurationProgressStyle(
+    startColor: AppColors.white72, //Colors.white.withOpacity(0.72),
+    endColor: AppColors.white72, //Colors.white.withOpacity(0.72),
   );
 
-  static final pastStyle = _ScheduleRowTimeWidgetConfigurationProgressStyle(
-    startColor: const Color(0xFF52525E), //Colors.white.withOpacity(0.72),
-    endColor: const Color(0xFF52525E),
+  static const pastStyle = _ScheduleRowTimeWidgetConfigurationProgressStyle(
+    startColor: AppColors.darkText72, //Colors.white.withOpacity(0.72),
+    endColor: AppColors.darkText72,
   );
 
-  static final inProgressStyle =
+  static const inProgressStyle =
       _ScheduleRowTimeWidgetConfigurationProgressStyle(
-    startColor: const Color(0xFF52525E), //Colors.white.withOpacity(0.72),
-    endColor: const Color(0xB700BD13),
+    startColor: AppColors.darkText72, //Colors.white.withOpacity(0.72),
+    endColor: AppColors.green72,
   );
 }
