@@ -17,13 +17,14 @@ class _ScheduleRowSingleSessionWidget extends ScheduleRowWidget {
 
   @override
   Widget build(BuildContext context) {
-    const progressStatus = ScheduleRowWidgetConfigurationProgressStatus.current;
+    const progressStatus =
+        ScheduleRowWidgetConfigurationProgressStatus.oncoming;
     const configuration = ScheduleRowSessionWidgetConfiguration(
       avatarUrl:
           'https://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/man-light-skin-tone.png',
       speakerName: 'Алексей Чулпин',
       sesionTitle: 'Субъективность в оценке дизайна',
-      isFavourite: true,
+      isFavourite: false,
       progressStatus: progressStatus,
     );
     const ddd = ScheduleRowTimeWidgetConfiguration(

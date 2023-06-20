@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_fest/application/ui/themes/app_colors.dart';
 import 'package:flutter_fest/application/ui/themes/app_text_style.dart';
 import 'package:flutter_fest/application/ui/widgets/schedule_row/schedule_row_widget.dart';
-
-import 'package:flutter_fest/resources/app_fonts.dart';
 import 'package:flutter_fest/resources/resources.dart';
 
 class ScheduleRowSessionWidget extends StatelessWidget {
