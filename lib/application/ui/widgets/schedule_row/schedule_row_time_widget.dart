@@ -69,7 +69,6 @@ class _DividerWidget extends StatelessWidget {
   final _DividerWidgetPosition position;
 
   const _DividerWidget({
-    super.key,
     required this.color,
     required this.position,
   });
