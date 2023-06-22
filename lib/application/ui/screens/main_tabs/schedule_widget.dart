@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_fest/application/ui/themes/app_colors.dart';
 import 'package:flutter_fest/application/ui/widgets/dialogs/dialog_widget.dart';
