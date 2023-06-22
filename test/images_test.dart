@@ -5,22 +5,24 @@ import 'package:flutter_fest/resources/resources.dart';
 
 void main() {
   test('images assets test', () {
-    expect(File(Images.eft).existsSync(), true);
-    expect(File(Images.iconsBookmark).existsSync(), true);
-    expect(File(Images.iconsBookmarkFull).existsSync(), true);
-    expect(File(Images.iconsCalendar).existsSync(), true);
-    expect(File(Images.iconsCalendarFull).existsSync(), true);
-    expect(File(Images.iconsPoint).existsSync(), true);
-    expect(File(Images.iconsPointFull).existsSync(), true);
-    expect(File(Images.iconsRoutes).existsSync(), true);
-    expect(File(Images.iconsStar).existsSync(), true);
-    expect(File(Images.iconsStarFull).existsSync(), true);
-    expect(File(Images.scheduleFfLogo).existsSync(), true);
-    expect(File(Images.scheduleBg).existsSync(), true);
-    expect(File(Images.scheduleLogo).existsSync(), true);
-    expect(File(Images.scheduleSurfLogo).existsSync(), true);
-    expect(File(Images.tabbarBookmark).existsSync(), true);
-    expect(File(Images.tabbarCalendar).existsSync(), true);
-    expect(File(Images.tabbarPoint).existsSync(), true);
+    expect(File(Images.eft).existsSync(), isTrue);
+    expect(File(Images.iconsBookmark).existsSync(), isTrue);
+    expect(File(Images.iconsBookmarkFull).existsSync(), isTrue);
+    expect(File(Images.iconsCalendar).existsSync(), isTrue);
+    expect(File(Images.iconsCalendarFull).existsSync(), isTrue);
+    expect(File(Images.iconsPoint).existsSync(), isTrue);
+    expect(File(Images.iconsPointFull).existsSync(), isTrue);
+    expect(File(Images.iconsRoutes).existsSync(), isTrue);
+    expect(File(Images.iconsStar).existsSync(), isTrue);
+    expect(File(Images.iconsStarFull).existsSync(), isTrue);
+    expect(File(Images.photoMock).existsSync(), isTrue);
+    expect(File(Images.scheduleFfLogo).existsSync(), isTrue);
+    expect(File(Images.scheduleBg).existsSync(), isTrue);
+    expect(File(Images.scheduleLogo).existsSync(), isTrue);
+    expect(File(Images.scheduleSurfLogo).existsSync(), isTrue);
+    expect(File(Images.speakerBackground).existsSync(), isTrue);
+    expect(File(Images.tabbarBookmark).existsSync(), isTrue);
+    expect(File(Images.tabbarCalendar).existsSync(), isTrue);
+    expect(File(Images.tabbarPoint).existsSync(), isTrue);
   });
 }

@@ -47,6 +47,15 @@ abstract class AppTextStyle {
     fontStyle: FontStyle.normal,
   );
 
+  static const timeTextBox = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w700,
+    fontFamily: AppFonts.basisGrotesquePro,
+    height: 1.375,
+    letterSpacing: 0.0,
+    fontStyle: FontStyle.normal,
+  );
+
   static const breakTimeElement = TextStyle(
     fontSize: 36,
     fontWeight: FontWeight.w700,

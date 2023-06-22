@@ -15,10 +15,13 @@ class Images {
   static const String iconsRoutes = 'assets/images/icons_routes.png';
   static const String iconsStar = 'assets/images/icons_star.png';
   static const String iconsStarFull = 'assets/images/icons_star_full.png';
+  static const String photoMock = 'assets/images/photo_mock.png';
   static const String scheduleFfLogo = 'assets/images/schedule_Ff_logo.png';
   static const String scheduleBg = 'assets/images/schedule_bg.png';
   static const String scheduleLogo = 'assets/images/schedule_logo.png';
   static const String scheduleSurfLogo = 'assets/images/schedule_surf_logo.png';
+  static const String speakerBackground =
+      'assets/images/speaker_background.png';
   static const String tabbarBookmark = 'assets/images/tabbar_bookmark.png';
   static const String tabbarCalendar = 'assets/images/tabbar_calendar.png';
   static const String tabbarPoint = 'assets/images/tabbar_point.png';
