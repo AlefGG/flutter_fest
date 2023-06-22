@@ -1,16 +1,25 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_fest/application/ui/themes/app_colors.dart';
+import 'package:flutter_fest/application/ui/widgets/dialogs/dialog_widget.dart';
 import 'package:flutter_fest/application/ui/widgets/schedule_row/schedule_row_break_widget.dart';
 import 'package:flutter_fest/application/ui/widgets/schedule_row/schedule_row_widget.dart';
-import 'package:flutter_fest/application/ui/widgets/top_notifications/top_notification_manager.dart';
 import 'package:flutter_fest/resources/resources.dart';
-import 'package:provider/provider.dart';
 
 class ScheduleWidget extends StatelessWidget {
   const ScheduleWidget({Key? key}) : super(key: key);
 
   void showOverlay(BuildContext context) {
-    context.read<TopNotificationManager>().show('ksamfa');
+    final configuration = DialogConfiguration(
+      title: "Хотите получить напоминание за 10 минут до начала лекции?",
+      actions: [
+        DialogActionConfiguration("Не надо", true, () {
+          Navigator.of(context).pop();
+        }),
+        DialogActionConfiguration("Да", false, () {}),
+      ],
+    );
+    DialogWidget.show<void>(context, configuration); //ДИАЛОГ
   }
 
   @override
