@@ -5,6 +5,7 @@ import 'package:flutter_fest/resources/resources.dart';
 
 void main() {
   test('images assets test', () {
+    expect(File(Images.easterEggLarge).existsSync(), isTrue);
     expect(File(Images.eft).existsSync(), isTrue);
     expect(File(Images.iconsBookmark).existsSync(), isTrue);
     expect(File(Images.iconsBookmarkFull).existsSync(), isTrue);
